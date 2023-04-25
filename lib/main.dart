@@ -63,14 +63,21 @@ class Application extends StatelessWidget {
           style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600),
           textAlign: TextAlign.center,
         ),
-        _getRow(),
+        _getRowIcons(),
+        SizedBox(
+          height: 12,
+        ),
+        _getSkillLables(),
       ],
     );
   }
 
-  Widget _getRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+  Widget _getRowIcons() {
+    return Wrap(
+      //! mainAxisAlignment: MainAxisAlignment.center,
+      runSpacing: 32,
+      spacing: 12,
+      alignment: WrapAlignment.spaceEvenly,
       children: [
         IconButton(
           onPressed: () {},
@@ -88,6 +95,32 @@ class Application extends StatelessWidget {
           onPressed: () {},
           icon: FaIcon(FontAwesomeIcons.telegram),
         ),
+      ],
+    );
+  }
+
+  Widget _getSkillLables() {
+    final imagesName = ["android", "dart", "flutter", "java", "kotlin"];
+
+    return Wrap(
+      alignment: WrapAlignment.center,
+      children: [
+        for (var skill in imagesName)
+          Card(
+            child: Column(children: [
+              Container(
+                child: Image(image: AssetImage("images/${skill}.png")),
+                width: 62,
+                height: 62,
+              ),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Text("${skill}"),
+              ),
+            ]),
+            elevation: 3,
+            shadowColor: Colors.black,
+          ),
       ],
     );
   }
