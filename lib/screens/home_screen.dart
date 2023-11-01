@@ -1,4 +1,5 @@
 import 'package:cva_app/widgets/about_me.dart';
+import 'package:cva_app/widgets/contact_me.dart';
 import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
@@ -155,9 +156,7 @@ class _HomeScreenPageState extends State<HomeScreenPage>
                   Container(
                     color: Colors.blue,
                   ),
-                  Container(
-                    color: Colors.green,
-                  ),
+                  ContactMe(),
                 ],
               ),
             ),
