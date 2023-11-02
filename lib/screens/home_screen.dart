@@ -56,7 +56,7 @@ class _HomeScreenPageState extends State<HomeScreenPage>
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       child: Image.asset(
-                        'assets/images/user.png',
+                        'assets/images/profile1.jpg',
                         width: 144,
                         alignment: Alignment.topCenter,
                       ),

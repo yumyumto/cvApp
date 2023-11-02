@@ -83,7 +83,7 @@ class _MyProjectState extends State<MyProject> {
                         style: TextStyle(
                           color: Color(0xFF004466),
                           fontSize: 14,
-                          fontFamily: 'Raleway',
+                          fontFamily: 'raleway-regular',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -93,9 +93,9 @@ class _MyProjectState extends State<MyProject> {
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Online booking Hotels from all over the\nworld and it use the'
-                      'multi hotel booking\napi and so on lorem ipsum and now to\nadfyda'
-                      'lkmh hamid hotels and now today\nfrom now to others',
+                      'Online booking Hotels from all\nover the world and it use the'
+                      ' multi\n hotel booking api and so on lorem\nipsum and now to adfyda'
+                      ' lkmh hamid hotels and now today from now to others',
                       style: TextStyle(
                         color: Color(0xFF004466),
                         fontSize: 16,
@@ -130,6 +130,7 @@ class _MyProjectState extends State<MyProject> {
                             child: Text(
                               'View figma design',
                               style: TextStyle(
+                                fontSize: 12,
                                 color: Colors.black,
                                 fontFamily: 'raleway-regular',
                               ),
@@ -153,6 +154,7 @@ class _MyProjectState extends State<MyProject> {
                                 Text(
                                   'View Website',
                                   style: TextStyle(
+                                    fontSize: 12,
                                     color: Colors.black,
                                     fontFamily: 'raleway-regular',
                                   ),
