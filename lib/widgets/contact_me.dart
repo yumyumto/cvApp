@@ -16,127 +16,134 @@ class _ContactMeState extends State<ContactMe> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Contact me',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontFamily: 'raleway-regular',
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            SizedBox(
-              height: 9,
-            ),
-            Divider(
-              thickness: 5,
-              color: Color(0xFF00FFA2),
-              indent: 0,
-              endIndent: 179,
-            ),
+            tabBarTitleWithGreenLine(),
             SizedBox(height: 34),
             // Name TextFiled
-            Row(
-              children: [
-                Image.asset(
-                  'assets/images/name.png',
-                  width: 18,
-                ),
-                SizedBox(width: 7),
-                Text(
-                  'Name',
-                )
-              ],
+            textBoxIconAndName(
+              'assets/images/name.png',
+              'Name',
             ),
 
             SizedBox(height: 4),
-
-            Container(
-              color: Color(0xFFF0F0F0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-
+            textBox(hintText: 'Name'),
             SizedBox(height: 25),
 
             // Email or phone TextField
-            Row(
-              children: [
-                Image.asset(
-                  'assets/images/email.png',
-                  width: 18,
-                ),
-                SizedBox(width: 7),
-                Text(
-                  'Email or Phone',
-                )
-              ],
+            textBoxIconAndName(
+              'assets/images/email.png',
+              'Email or Phone',
             ),
 
             SizedBox(height: 4),
-
-            Container(
-              color: Color(0xFFF0F0F0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-
+            textBox(hintText: 'Emial or Phone'),
             SizedBox(height: 25),
 
             // message TextFiled
-            Row(
-              children: [
-                Image.asset(
-                  'assets/images/message.png',
-                  width: 18,
-                ),
-                SizedBox(width: 7),
-                Text(
-                  'Messages',
-                )
-              ],
+            textBoxIconAndName(
+              'assets/images/message.png',
+              'Messages',
             ),
 
             SizedBox(height: 4),
-
-            Container(
-              color: Color(0xFFF0F0F0),
+            textBox(
               height: 140,
-              child: TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                ),
-              ),
+              hintText: 'Messages',
             ),
-
             SizedBox(height: 22),
 
-            Center(
-              child: Container(
-                width: 370,
-                height: 42,
-                decoration: BoxDecoration(
-                  color: Color(0xFF00FFA2),
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Submit',
-                    style: TextStyle(
-                      color: Color(0xFF004466),
-                    ),
-                  ),
-                ),
-              ),
-            )
+            submitButton()
           ],
+        ),
+      ),
+    );
+  }
+
+  tabBarTitleWithGreenLine() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Contact me',
+          style: TextStyle(
+            color: Color(0xFF004466),
+            fontSize: 18,
+            fontFamily: 'raleway-regular',
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        SizedBox(
+          height: 9,
+        ),
+        Divider(
+          thickness: 5,
+          color: Color(0xFF00FFA2),
+          indent: 0,
+          endIndent: 179,
+        ),
+      ],
+    );
+  }
+
+  Row textBoxIconAndName(String Images, String text) {
+    return Row(
+      children: [
+        Image.asset(
+          Images,
+          width: 18,
+        ),
+        SizedBox(width: 7),
+        Text(
+          text,
+          style: TextStyle(
+            color: Color(0xFF004466),
+          ),
+        )
+      ],
+    );
+  }
+
+  textBox({double height = 48, String hintText = ''}) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4),
+        color: Color(0xFFF0F0F0),
+      ),
+      height: height,
+      child: TextField(
+        cursorColor: Color(0xFF004466),
+        decoration: InputDecoration(
+          hintText: hintText,
+          hintStyle: TextStyle(
+            color: Color(0xFFC6C2C2),
+            fontSize: 16,
+            fontFamily: 'raleway-regular',
+            fontWeight: FontWeight.w400,
+          ),
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.only(left: 20),
+        ),
+      ),
+    );
+  }
+
+  // Submit-Button UI
+  submitButton() {
+    return Center(
+      child: Container(
+        width: 370,
+        height: 42,
+        decoration: BoxDecoration(
+          color: Color(0xFF00FFA2),
+          borderRadius: BorderRadius.circular(4),
+        ),
+        child: TextButton(
+          onPressed: () {},
+          child: Text(
+            'Submit',
+            style: TextStyle(
+              color: Color(0xFF004466),
+            ),
+          ),
         ),
       ),
     );
