@@ -108,60 +108,7 @@ class _AboutMeState extends State<AboutMe> {
             SizedBox(
               height: 18,
             ),
-            Row(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2),
-                    border: Border.all(
-                      color: Color(0xFF00FFA2),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Image.asset(
-                      'assets/images/nextjs.png',
-                      width: 44,
-                      height: 26,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2),
-                    border: Border.all(
-                      color: Color(0xFF00FFA2),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 9.0,
-                      vertical: 3,
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/black-figma.png',
-                          width: 20,
-                        ),
-                        Text(
-                          'Figma',
-                          style: TextStyle(
-                            color: Color(0xFF004466),
-                            fontSize: 14,
-                            fontFamily: 'Raleway',
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            mySkills(),
             SizedBox(
               height: 30,
             ),
@@ -319,4 +266,61 @@ class _AboutMeState extends State<AboutMe> {
       ),
     );
   }
+}
+
+mySkills() {
+  return Row(
+    children: [
+      Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(2),
+          border: Border.all(
+            color: Color(0xFF00FFA2),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: Image.asset(
+            'assets/images/nextjs.png',
+            width: 44,
+            height: 26,
+          ),
+        ),
+      ),
+      SizedBox(
+        width: 10,
+      ),
+      Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(2),
+          border: Border.all(
+            color: Color(0xFF00FFA2),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 9.0,
+            vertical: 3,
+          ),
+          child: Row(
+            children: [
+              Image.asset(
+                'assets/images/black-figma.png',
+                width: 20,
+              ),
+              Text(
+                'Figma',
+                style: TextStyle(
+                  color: Color(0xFF004466),
+                  fontSize: 14,
+                  fontFamily: 'Raleway',
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ],
+  );
 }

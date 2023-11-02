@@ -1,5 +1,6 @@
 import 'package:cva_app/widgets/about_me.dart';
 import 'package:cva_app/widgets/contact_me.dart';
+import 'package:cva_app/widgets/project_me.dart';
 import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
@@ -47,10 +48,19 @@ class _HomeScreenPageState extends State<HomeScreenPage>
               child: Column(
                 children: [
                   // user profile
-                  Image.asset(
-                    'assets/images/user.png',
-                    width: 144,
-                    alignment: Alignment.topCenter,
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1, color: Colors.black),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.asset(
+                        'assets/images/user.png',
+                        width: 144,
+                        alignment: Alignment.topCenter,
+                      ),
+                    ),
                   ),
 
                   SizedBox(
@@ -153,9 +163,7 @@ class _HomeScreenPageState extends State<HomeScreenPage>
                 controller: _tabController,
                 children: [
                   AboutMe(),
-                  Container(
-                    color: Colors.blue,
-                  ),
+                  MyProject(),
                   ContactMe(),
                 ],
               ),
